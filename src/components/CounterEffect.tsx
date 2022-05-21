@@ -15,12 +15,11 @@ const CounterEffect = () => {
   useEffect(() => {
     if (counter <= MAXIMUM_COUNT) return;
 
-    console.log('%cse llegó al valor máximo', 'color:withe; background:blue');
+    const timeline = gsap.timeline();
 
-    gsap.to(refCounter.current, { y: -10, ease: 'ease.out' })
-      .then(() => {
-        gsap.to(refCounter.current, { y: 0, ease: 'bounce.out' })
-      })
+    timeline.to(refCounter.current, { y: -10, ease: 'ease.out' })
+      .to(refCounter.current, { y: 0, ease: 'bounce.out' });
+
   }, [counter]);
 
   return (
