@@ -1,5 +1,6 @@
 import Counter from "./components/Counter";
 import CounterBy from "./components/CounterBy";
+import CounterCustomHook from "./components/CounterCustomHook";
 import CounterEffect from "./components/CounterEffect";
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
       <hr />
       <CounterEffect />
       <hr />
-      <CounterEffect />
+      <CounterCustomHook />
     </div>
   );
 }
