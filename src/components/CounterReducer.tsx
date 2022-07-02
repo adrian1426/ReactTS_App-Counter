@@ -1,17 +1,18 @@
 import { useReducer } from "react";
 import { counterReducer } from "../reducers/counterReducer/counterReducer";
 import { initialState } from "../reducers/counterReducer/state/initialstate";
+import * as CounterActions from '../reducers/counterReducer/actions/counterActions';
 
 
 const CounterReducer = () => {
   const [state, dispatch] = useReducer(counterReducer, initialState);
 
   const handleClick = (value: number) => {
-    dispatch({ type: 'increaseBy', payload: { value } });
+    dispatch(CounterActions.actionIncreasy(value));
   };
 
   const handleReset = () => {
-    dispatch({ type: 'reset' });
+    dispatch(CounterActions.actionReset());
   };
 
   return (
